@@ -6,6 +6,12 @@ var obj = {
 			elems[i].addEventListener( "click", function( e ) {
 				console.log( e.target.innerText + this.strTexts );
 			}.bind(this));
+
+                        //잘했고요 아래처럼 bind할 함수를() 로 감싸주는 게 일반적입니다.
+			elems[i].addEventListener( "click", (function( e ) {
+				console.log( e.target.innerText + this.strTexts );
+			}).bind(this));
+
 		}
 	}
 }
